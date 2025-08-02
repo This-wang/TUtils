@@ -22,10 +22,14 @@ jobs:
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-      
-    - name: Auto increment version and publish
+
+    - name: Set script permissions
       run: |
-        ./auto_publish.sh
+        chmod +x ./auto_publish.sh
+        ls -l ./auto_publish.sh  # 验证权限
+
+    - name: Run publish script
+      run: ${{ github.workspace }}/auto_publish.sh
       env:
         ALIYUN_MAVEN_USERNAME: ${{ secrets.ALIYUN_MAVEN_USERNAME }}
         ALIYUN_MAVEN_PASSWORD: ${{ secrets.ALIYUN_MAVEN_PASSWORD }}
