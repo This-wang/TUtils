@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 配置信息
-LIBRARY_MODULE="library" # 你的library模块名称
-ALIYUN_MAVEN_URL="https://packages.aliyun.com/maven/repository/your-repo" # 替换为你的阿里云Maven仓库地址
+LIBRARY_MODULE="T-Utils" # 你的library模块名称
+ALIYUN_MAVEN_URL="https://packages.aliyun.com/61108e7fadb2703b38cc5a8f/maven/2127297-release-5mc2rk" # 替换为你的阿里云Maven仓库地址
 
 # 获取当前版本号 (适配Kotlin DSL)
 CURRENT_VERSION=$(cat ${LIBRARY_MODULE}/build.gradle.kts | grep -E "version\s*=\s*\"[0-9]+\.[0-9]+\.[0-9]+\"" | awk -F"\"" '{print $2}')
