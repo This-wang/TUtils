@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
 }
 
 android {
@@ -10,7 +11,6 @@ android {
     defaultConfig {
         minSdk = 23
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -41,4 +41,28 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
     implementation(libs.coil.network.okhttp)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.clj.t-utils" // 替换为你的groupId
+                artifactId = "t-utils" // 替换为你的artifactId
+                version = "0.0.1"
+            }
+        }
+
+        repositories {
+            maven {
+                url = uri("https://packages.aliyun.com/61108e7fadb2703b38cc5a8f/maven/2127297-release-5mc2rk")
+                credentials {
+                    username = project.findProperty("ALIYUN_MAVEN_USERNAME") as String? ?: System.getenv("ALIYUN_MAVEN_USERNAME") ?: ""
+                    password = project.findProperty("ALIYUN_MAVEN_PASSWORD") as String? ?: System.getenv("ALIYUN_MAVEN_PASSWORD") ?: ""
+                }
+            }
+        }
+    }
 }
