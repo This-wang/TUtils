@@ -23,6 +23,8 @@ echo "New version: $NEW_VERSION"
 sed -i 's/^[[:space:]]*version = "[0-9]\+\.[0-9]\+\.[0-9]\+"/        version = "'${NEW_VERSION}'"/' ${LIBRARY_MODULE}/build.gradle.kts
 # 更新README.md中的版本号
 sed -i "s/${CURRENT_VERSION}/${NEW_VERSION}/g" README.md
+# 更更新 app build.gradle.kts中的版本号
+sed -i 's/com\.clj\.t-utils:t-utils:[0-9\.]\+/com.clj.t-utils:t-utils:${NEW_VERSION}/g' build.gradle.kts
 
 # 提交版本号变更
 git config --global user.name "GitHub Actions"
