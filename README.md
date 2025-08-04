@@ -19,5 +19,5 @@ dependencyResolutionManagement {
 # 配置包信息
 
 dependencies {
-    compile 'com.clj.t-utils:t-utils:0.0.2'
+    compile 'com.clj.t-utils:t-utils:0.0.3'
 }

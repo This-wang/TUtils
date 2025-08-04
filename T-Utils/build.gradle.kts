@@ -51,7 +51,7 @@ afterEvaluate {
 
                 groupId = "com.clj.t-utils" // 替换为你的groupId
                 artifactId = "t-utils" // 替换为你的artifactId
-                version = "0.0.2"
+        version = "0.0.3"
             }
         }
 
