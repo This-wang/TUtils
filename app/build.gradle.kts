@@ -39,5 +39,5 @@ android {
 
 dependencies {
     implementation(libs.bundles.all)
-    implementation("com.clj.t-utils:t-utils:0.0.2")
+    implementation("com.clj.t-utils:t-utils:${property("tUtilsVersion")}")
 }
