@@ -20,10 +20,9 @@ echo "Current version: $CURRENT_VERSION"
 echo "New version: $NEW_VERSION"
 
 # 更新build.gradle.kts中的版本号
-sed -i "s/version = \"${CURRENT_VERSION}\"/version = \"${NEW_VERSION}\"/g" ${LIBRARY_MODULE}/build.gradle.kts
-
+sed -i 's/^[[:space:]]*version = "[0-9]\+\.[0-9]\+\.[0-9]\+"/        version = "'${NEW_VERSION}'"/' ${LIBRARY_MODULE}/build.gradle.kts
 # 更新README.md中的版本号
-#sed -i "s/${CURRENT_VERSION}/${NEW_VERSION}/g" README.md
+sed -i "s/${CURRENT_VERSION}/${NEW_VERSION}/g" README.md
 
 # 提交版本号变更
 git config --global user.name "GitHub Actions"

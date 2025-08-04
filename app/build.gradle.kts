@@ -6,16 +6,14 @@ plugins {
 
 android {
     namespace = "com.clj.tutils"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.clj.tutils"
         minSdk = 23
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -40,6 +38,7 @@ android {
 }
 
 dependencies {
-
     implementation(libs.bundles.all)
+    implementation("com.clj.t-utils:t-utils:0.0.2")
+
 }

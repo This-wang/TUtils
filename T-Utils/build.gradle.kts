@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.clj.t_utils"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 23
@@ -51,7 +51,7 @@ afterEvaluate {
 
                 groupId = "com.clj.t-utils" // 替换为你的groupId
                 artifactId = "t-utils" // 替换为你的artifactId
-                version = "0.0.1"
+                version = "0.0.2"
             }
         }
 
