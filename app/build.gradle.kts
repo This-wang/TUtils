@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.all)
-    implementation("com.clj.t-utils:t-utils:${property("tUtilsVersion")}")
+    implementation(project(":T-Utils"))
+
 }

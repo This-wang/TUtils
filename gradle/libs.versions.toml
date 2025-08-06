@@ -2,7 +2,6 @@
 agp = "8.8.0"
 kotlin = "2.1.10"
 coreKtx = "1.10.1"
-espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2025.05.00"
@@ -10,28 +9,33 @@ appcompat = "1.6.1"
 material = "1.10.0"
 androidx-exifinterface = "1.4.1"
 
-coil = "3.2.0"
+coil3 = "3.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-exifinterface = { module = "androidx.exifinterface:exifinterface", version.ref = "androidx-exifinterface" }
 
-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
-coil-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil" }
-coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
+
+coil3 = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
+coil3-video = { module = "io.coil-kt.coil3:coil-video", version.ref = "coil3" }
+coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil3-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil3" }
 
 [plugins]
+
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
@@ -44,12 +48,12 @@ all = [
     "androidx-core-ktx",
     "androidx-lifecycle-runtime-ktx",
     "androidx-activity-compose",
-    "androidx-compose-bom",
     "androidx-ui",
     "androidx-ui-graphics",
-    "androidx-ui-tooling-preview",
-    "androidx-material3",
-    "androidx-espresso-core",
     "androidx-ui-tooling",
+    "androidx-ui-tooling-preview",
+    "androidx-material3"
 ]
+
+coil = ["coil3" , "coil3-compose" ,"coil3-network-okhttp" , "coil3-video"]
 
