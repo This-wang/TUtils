@@ -22,5 +22,6 @@ dependencies {
     compile 'com.clj.t-utils:t-utils:0.0.4'
 }
 
-<111111>
-<22222>
+<A>
+<B>
+<C>
